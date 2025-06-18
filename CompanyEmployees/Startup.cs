@@ -32,7 +32,12 @@ public class Startup
         {
             options.SuppressModelStateInvalidFilter = true;
         });
+        services.ConfigureVersioning();
+        services.ConfigureIdentity();
 
+
+
+        services.AddAuthentication();
         services.AddScoped<ValidationFilterAttribute>();
         services.AddScoped<ValidateCompanyExistsAttribute>();
         services.AddScoped<ValidateEmployeeForCompanyExistsAttribute>();
@@ -67,6 +72,8 @@ public class Startup
             //app.UseSwaggerUI();
         }
 
+        app.UseAuthentication();
+        app.UseAuthorization();
         app.ConfigureExceptionHandler(logger);
         app.UseHttpsRedirection();
         app.UseStaticFiles();

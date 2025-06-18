@@ -4,6 +4,10 @@ using Repository;
 using Microsoft.EntityFrameworkCore;
 using CompanyEmployees;
 using FluentAssertions.Common;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Entities.Models;
+using Microsoft.AspNetCore.Identity;
 
 public static class ServiceExtensions
 {
@@ -32,4 +36,31 @@ public static class ServiceExtensions
     public static IMvcBuilder AddCustomCSVFormatter(this IMvcBuilder builder) =>
     builder.AddMvcOptions(config => config.OutputFormatters.Add(new
     CsvOutputFormatter()));
+
+    public static void ConfigureVersioning(this IServiceCollection services)
+    {
+        services.AddApiVersioning(opt =>
+        {
+            opt.ReportApiVersions = true;
+            opt.AssumeDefaultVersionWhenUnspecified = true;
+            opt.DefaultApiVersion = new ApiVersion(1, 0);
+            opt.ApiVersionReader = new HeaderApiVersionReader("api-version");
+        });
+    }
+    public static void ConfigureIdentity(this IServiceCollection services)
+    {
+        var builder = services.AddIdentityCore<User>(o =>
+        {
+            o.Password.RequireDigit = true;
+            o.Password.RequireLowercase = false;
+            o.Password.RequireUppercase = false;
+            o.Password.RequireNonAlphanumeric = false;
+            o.Password.RequiredLength = 10;
+            o.User.RequireUniqueEmail = true;
+        });
+        builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole),
+       builder.Services);
+        builder.AddEntityFrameworkStores<RepositoryContext>()
+        .AddDefaultTokenProviders();
+    }
 }

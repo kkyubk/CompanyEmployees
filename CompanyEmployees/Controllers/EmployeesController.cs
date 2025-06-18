@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 
 namespace CompanyEmployes.Controllers
 {
+
     [Route("api/companies/{companyId}/employees")]
     [ApiController]
     public class EmployeesController : ControllerBase
@@ -29,7 +30,7 @@ namespace CompanyEmployes.Controllers
         }
 
         [HttpGet]
-        [HttpGet]
+        [HttpHead]
         public async Task<IActionResult> GetEmployeesForCompany(Guid companyId, [FromQuery] EmployeeParameters employeeParameters)
         {
             if (!employeeParameters.ValidAgeRange)

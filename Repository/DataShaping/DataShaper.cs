@@ -33,8 +33,7 @@ namespace Repository.DataShaping
             var requiredProperties = new List<PropertyInfo>();
             if (!string.IsNullOrWhiteSpace(fieldsString))
             {
-                var fields = fieldsString.Split(',',
-                                                StringSplitOptions.RemoveEmptyEntries);
+                var fields = fieldsString.Split(',',StringSplitOptions.RemoveEmptyEntries);
                 foreach (var field in fields)
                 {
                     var property = Properties

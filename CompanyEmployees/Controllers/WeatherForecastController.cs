@@ -1,6 +1,7 @@
 using Contracts;
 using Microsoft.AspNetCore.Mvc;
 
+
 [Route("[controller]")]
 [ApiController]
 public class WeatherForecastController : ControllerBase

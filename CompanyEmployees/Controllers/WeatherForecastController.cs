@@ -5,20 +5,16 @@ using Microsoft.AspNetCore.Mvc;
 [ApiController]
 public class WeatherForecastController : ControllerBase
 {
-    private readonly ILoggerManager _logger;
-
-    public WeatherForecastController(ILoggerManager logger)
+    private readonly IRepositoryManager _repository;
+    public WeatherForecastController(IRepositoryManager repository)
     {
-        _logger = logger;
+        _repository = repository;
     }
-
     [HttpGet]
-    public IEnumerable<string> Get()
+    public ActionResult<IEnumerable<string>> Get()
     {
-        _logger.LogInfo("Info message from WeatherForecastController.");
-        _logger.LogDebug("Debug message from WeatherForecastController.");
-        _logger.LogWarn("Warning message from WeatherForecastController.");
-        _logger.LogError("Error message from WeatherForecastController.");
+        /*_repository.Company.AnyMethodFromCompanyRepository();
+        _repository.Employee.AnyMethodFromEmployeeRepository();*/
         return new string[] { "value1", "value2" };
     }
 }

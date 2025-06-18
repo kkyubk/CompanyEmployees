@@ -190,6 +190,10 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryContext.cs" />
+    <Compile Include="RequestFeatures\EmployeeParameters.cs" />
+    <Compile Include="RequestFeatures\MetaData.cs" />
+    <Compile Include="RequestFeatures\PagedList.cs" />
+    <Compile Include="RequestFeatures\RequestParameters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

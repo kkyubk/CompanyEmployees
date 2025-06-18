@@ -3,6 +3,7 @@ using Entities;
 using Repository;
 using Microsoft.EntityFrameworkCore;
 using CompanyEmployees;
+using FluentAssertions.Common;
 
 public static class ServiceExtensions
 {

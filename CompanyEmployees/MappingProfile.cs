@@ -6,7 +6,7 @@ namespace CompanyEmployees
 {
     public class MappingProfile: Profile
     {
-        public MappingProfile()
+        public MappingProfile() 
         {
             CreateMap<Company, CompanyDto>()
             .ForMember(c => c.FullAddress,
@@ -15,7 +15,8 @@ namespace CompanyEmployees
             CreateMap<CompanyForCreationDto, Company>();
             CreateMap<EmployeeForCreationDto, Employee>();
             CreateMap<EmployeeForUpdateDto, Employee>();
-            CreateMap<CompanyForUpdateDto, Company>();
+            CreateMap<CompanyForUpdateDto, Company>()
+                .ForMember(dest => dest.Employees, opt => opt.MapFrom(src => src.Employees));
             CreateMap<EmployeeForUpdateDto, Employee>().ReverseMap();
         }
     }

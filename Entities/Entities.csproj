@@ -182,6 +182,7 @@
     <Compile Include="DataTransferObjects\CompanyForUpdateDto.cs" />
     <Compile Include="DataTransferObjects\EmployeeDto.cs" />
     <Compile Include="DataTransferObjects\EmployeeForCreationDto.cs" />
+    <Compile Include="DataTransferObjects\EmployeeForManipulationDto.cs" />
     <Compile Include="DataTransferObjects\EmployeeForUpdateDto.cs" />
     <Compile Include="ErrorModel\ErrorDetails.cs" />
     <Compile Include="IRepositoryBase.cs" />

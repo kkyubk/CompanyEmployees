@@ -178,7 +178,11 @@
     <Compile Include="Configuration\CompanyConfiguration.cs" />
     <Compile Include="Configuration\EmployeeConfiguration.cs" />
     <Compile Include="DataTransferObjects\CompanyDto.cs" />
+    <Compile Include="DataTransferObjects\CompanyForCreationDto.cs" />
+    <Compile Include="DataTransferObjects\CompanyForUpdateDto.cs" />
     <Compile Include="DataTransferObjects\EmployeeDto.cs" />
+    <Compile Include="DataTransferObjects\EmployeeForCreationDto.cs" />
+    <Compile Include="DataTransferObjects\EmployeeForUpdateDto.cs" />
     <Compile Include="ErrorModel\ErrorDetails.cs" />
     <Compile Include="IRepositoryBase.cs" />
     <Compile Include="Models\Company.cs" />

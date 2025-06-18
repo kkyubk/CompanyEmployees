@@ -76,6 +76,17 @@ namespace CompanyEmployees.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("Entities.Models.Employee", b =>
+            {   
+                b.HasOne("Entities.Models.Company", "Company")
+                    .WithMany("Employees")
+                    .HasForeignKey("CompanyId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+                //b.Navigation("Company");
+            });
+
             modelBuilder.Entity("Employee", b =>
                 {
                     b.HasOne("Company", "Company")

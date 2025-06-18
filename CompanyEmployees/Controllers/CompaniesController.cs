@@ -22,7 +22,7 @@ namespace CompanyEmployees.Controllers
             _logger = logger;
             _mapper = mapper;
         }
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult GetCompanies()
         {
             //throw new Exception("Exception");

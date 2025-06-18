@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Remoting.Contexts;
 using Entities.Configuration;
+using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Entities

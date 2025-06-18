@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICompanyRepository.cs" />
+    <Compile Include="IDataShaper.cs" />
     <Compile Include="IEmployeeRepository.cs" />
     <Compile Include="ILoggerManager.cs" />
     <Compile Include="IRepositoryManager.cs" />

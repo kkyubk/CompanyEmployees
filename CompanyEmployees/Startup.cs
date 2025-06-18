@@ -1,10 +1,12 @@
 using CompanyEmployees.ActionFilters;
 using CompanyEmployees.Extensions;
 using Contracts;
+using Entities.DataTransferObjects;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using NLog;
+using Repository.DataShaping;
 
 namespace CompanyEmployees;
 
@@ -34,6 +36,7 @@ public class Startup
         services.AddScoped<ValidationFilterAttribute>();
         services.AddScoped<ValidateCompanyExistsAttribute>();
         services.AddScoped<ValidateEmployeeForCompanyExistsAttribute>();
+        services.AddScoped<IDataShaper<EmployeeDto>, DataShaper<EmployeeDto>>();
 
         services.AddControllers(config =>
         {
